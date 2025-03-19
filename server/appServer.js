@@ -301,9 +301,11 @@ const PORT = process.env.PORT || 3001;
 
 // הגדרת CORS כדי לאפשר גישה מדומיין GitHub Pages
 app.use(cors({
-  origin: '*', // בהמשך תגביל זאת לדומיין ה-GitHub Pages שלך
+  origin: '*',
   methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  exposedHeaders: ['Content-Disposition'] 
 }));
 
 // הגדרות נוספות
